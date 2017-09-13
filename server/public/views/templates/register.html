@@ -1,17 +1,38 @@
+<!-- this is where a new visitor will register as a user -->
+
+
+<div id="header">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqRIB5QWcXb7K_Z5WZ3CDUerUBquc05kJDUh_u_ibBh1978TGu">
+    <h1>Welcome to My Family Medical tracker</h1>
+    <h1>Create an Account</h1>
+</div>
 <div class="container">
-  <h1 class="lead">Register User</h1>
   <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
   <form ng-submit="lc.registerUser()">
     <div>
-        <label for="username">Username:</label>
+        <label for="username">Enter your email (this will be your username)</label>
         <input type="text" ng-model="lc.user.username" />
     </div>
     <div>
-        <label for="password">Password:</label>
+        <label for="password">Choose a Passwword:</label>
         <input type="password" ng-model="lc.user.password" />
     </div>
-    <input class="btn btn-default" type="submit" name="submit" value="Register" />
+    <div>
+        <label for="FirstName">First Name:</label>
+        <input type="FirstName" ng-model="lc.user.firstname" />
+    </div>
+    <div>
+        <label for="LastName">Last Name:</label>
+        <input type="LastName" ng-model="lc.user.lastname" />
+    <div>
+        <label for="DOB">Date of Birth:</label>
+        <input type="password" ng-model="lc.user.dateOfBirth" />
+    </div>
+    <input class="btn btn-default" type="submit" name="Create an Account Create a Profile" value="Create an Account and User Profile" />
     <a href="#home">Cancel</a>
+    
   </form>
-
+  
 </div>
+<button ng-click="lc.sendMail()">Send</button>
+<!-- look up how to include two functions in an ng-click -->

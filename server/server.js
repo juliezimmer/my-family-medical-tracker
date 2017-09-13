@@ -12,7 +12,7 @@ var db = require('./modules/db.config.js');
 var indexRouter = require('./routes/index.router');
 var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
-
+var mailRouter = require('./routes/mail.router');
 var port = process.env.PORT || 5000;
 
 // Body parser middleware
@@ -32,6 +32,9 @@ app.use(passport.session());
 // Routes
 app.use('/register', registerRouter);
 app.use('/user', userRouter);
+
+//for modemailer use
+app.use('/mail', mailRouter);
 
 // Catch all bucket, must be last!
 app.use('/', indexRouter);

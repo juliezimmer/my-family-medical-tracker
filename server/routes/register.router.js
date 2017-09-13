@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Users = require('../models/user.js');
+var Users = require('../models/userSchema.js');
 var path = require('path');
 
 
@@ -21,6 +21,7 @@ router.post('/', function(req, res, next) {
     var userToSave = {
       username : req.body.username,
       password : req.body.password
+      
     };
 
 

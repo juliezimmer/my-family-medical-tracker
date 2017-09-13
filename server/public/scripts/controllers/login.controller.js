@@ -31,6 +31,7 @@ myApp.controller('LoginController', function($http, $location, UserService) {
 
     vm.registerUser = function() {
       console.log('LoginController -- registerUser');
+      // below says we can't register a new user if the username field and the password field are blank
       if(vm.user.username === '' || vm.user.password === '') {
         vm.message = "Choose a username and password!";
       } else {
@@ -44,4 +45,13 @@ myApp.controller('LoginController', function($http, $location, UserService) {
         });
       }
     }
-});
+    vm.sendMail = function() { //need to communicate with the mail.router.js file
+      console.log('sendMail has been clicked');
+     //send user's email through this http.post request
+      $http.post('/mail').then(function(response) {
+        console.log('This is the response:', response);
+        })
+
+    };
+
+}); //end of controller

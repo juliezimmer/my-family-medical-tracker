@@ -1,18 +1,32 @@
-<div class="container">
-  <h1 class="lead">Login</h1>
-    <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
-    <form ng-submit="lc.login()">
-      <div>
-          <label for="username">Username:</label>
-          <input type="text" ng-model="lc.user.username" />
-      </div>
-      <div>
-          <label for="password">Password:</label>
-          <input type="password" ng-model="lc.user.password" />
-      </div>
-      <div>
-          <input class="btn btn-default" type="submit" name="submit" value="Log In" />
-          <a href="#register">Register</a>
-      </div>
-    </form>
+<!-- this is the landing view, what the user sees when the website URL is entered in the address bar (AKA the Home page)  using the path: (URL) '/home'  -->
+
+<div id="header" class="container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqRIB5QWcXb7K_Z5WZ3CDUerUBquc05kJDUh_u_ibBh1978TGu">
+    <h1>Welcome to My Family Medical Tracker</h1>
+    <br>
+    <h1>The Place to Track Your Family Medical History</h1>
+    <h4 class="lead">Login</h4>
+    <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">
+        <!-- if the user tries to login and isn't a registered user, an alert message pops up - {{lc.message}} -->
+        {{lc.message}}</h2>
+        <form ng-submit="lc.login()">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" ng-model="lc.user.username" />
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" ng-model="lc.user.password" />
+            </div>
+
+            <div>
+                <input class="btn btn-default" type="submit" name="submit" value="Log In" />
+                <a href="#register">
+                    <h4>Not a Member? Register Here!</h4>
+                </a>
+            </div>
+        </form>
+</div>
+<div id="background">
+    <img src="http://www.birmingham.ac.uk/Images/College-MDS-only/facilities/cpd/1250x394/minimed1250x394.jpg">
 </div>
