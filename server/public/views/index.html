@@ -2,19 +2,24 @@
 <html>
     <head>
         <title>Solo Project</title>
+        
+        <script src="vendors/angular/angular.min.js"></script>
+        <script src="vendors/angular-route/angular-route.min.js"></script>
+        <script src="vendors/jquery-3.2.1.min.js"></script>
         <link rel="stylesheet" href="styles/style.css">
-
-        <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
-        <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
-        <script type="text/javascript" src="scripts/client.js"></script>
-        <script type="text/javascript" src="scripts/controllers/info.controller.js"></script>
-        <script type="text/javascript" src="scripts/controllers/login.controller.js"></script>
-        <script type="text/javascript" src="scripts/controllers/user.controller.js"></script>
-        <script type="text/javascript" src="scripts/services/user.service.js"></script>
+        <link rel="stylesheet" href="vendors/bootstrap.css">
+        <script src="vendors/bootstrap.js"></script>
+        <script src="scripts/client.js"></script>
+        <script src="scripts/controllers/login.controller.js"></script>
+        <script src="scripts/controllers/user.controller.js"></script>
+        <script src="scripts/controllers/med.controller.js"></script>
+        <script src="scripts/services/user.service.js"></script>
+        <script src="scripts/services/med.service.js"></script>
+        
     </head>
 
-    <body ng-app="myApp">
-      <header ng-include=></header>
+    <body ng-app="medicalApp">
+      
 
       <main ng-view></main>
 

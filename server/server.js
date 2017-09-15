@@ -8,11 +8,13 @@ var sessionConfig = require('./modules/session.config');
 //DB Module
 var db = require('./modules/db.config.js');
 
-// Route includes
+// Routes includes
 var indexRouter = require('./routes/index.router');
 var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
 var mailRouter = require('./routes/mail.router');
+var medRouter = require('./routes/med.router');
+
 var port = process.env.PORT || 5000;
 
 // Body parser middleware
@@ -30,10 +32,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
+//these functions look for the current path (the route the client wants) and then sends the user there. The params are the route we wnat and the file where it should go. registerRoute is a variable that is defined above on line 14.
 app.use('/register', registerRouter);
 app.use('/user', userRouter);
+app.use('/meds', medRouter);
 
-//for modemailer use
+//for modemailer 
 app.use('/mail', mailRouter);
 
 // Catch all bucket, must be last!

@@ -1,4 +1,4 @@
-myApp.controller('LoginController', function($http, $location, UserService) {
+medicalApp.controller('LoginController', function($http, $location, UserService) {
     console.log('LoginController created');
     var vm = this;
     vm.user = {
@@ -35,7 +35,7 @@ myApp.controller('LoginController', function($http, $location, UserService) {
       if(vm.user.username === '' || vm.user.password === '') {
         vm.message = "Choose a username and password!";
       } else {
-        console.log('LoginController -- registerUser -- sending to server...', vm.user);
+        console.log('LoginController -- registerUser -- sending to server...', vm.user); // vm.user is the object that is created when the user registers and fills in the text boxes. Shown in the DOM register.html as lc.user.
         $http.post('/register', vm.user).then(function(response) {
           console.log('LoginController -- registerUser -- success');
           $location.path('/home');
@@ -47,7 +47,7 @@ myApp.controller('LoginController', function($http, $location, UserService) {
     }
     vm.sendMail = function() { //need to communicate with the mail.router.js file
       console.log('sendMail has been clicked');
-     //send user's email through this http.post request
+     //send user's email through this http.post requeste
       $http.post('/mail').then(function(response) {
         console.log('This is the response:', response);
         })

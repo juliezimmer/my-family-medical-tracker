@@ -1,6 +1,60 @@
-<div ng-include="'views/partials/nav.html'"></div>
-<div class="container">
+<!-- This is where the user adds sections to their profile and where the active profile resides -->
 
-    <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
-    <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
-</div>
+<div id="header" class="container" class="col-lg-12">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqRIB5QWcXb7K_Z5WZ3CDUerUBquc05kJDUh_u_ibBh1978TGu">
+  <h1>Welcome to My Family Medical Tracker, {{uc.userObject.firstname}}!</h1>
+  <div>
+      DOB: {{uc.userObject.dateOfBirth}}
+  </div>
+
+  <div>
+      <h3>Blood Type</h3>
+        <select>
+            <option value="Apos">A+</option>
+            <option value="Aneg">A-</option>
+            <option value="Bpos">B+</option>
+            <option value="Bneg">B-</option>
+            <option value="ABpos">AB+</option>
+            <option value="ABneg">AB-</option>
+            <option value="Opos">O+</option>
+            <option value="Oneg">O-</option>
+        </select>
+  </div>
+  </div>
+
+  <div>
+      <h2>Health Care Practitioners</h2>
+      <p>Name:        </p>
+      <p>Specialty/Type:   </p>
+      <p>Location:          </p>
+      <p>Phone:          </p>
+      <button class="btn btn-default" type="submit" ng-click=>Add a Healthcare Practitioner</button> 
+  </div>
+  
+  <div>
+      <h2>Current Medications</h2>
+      <p>Medication:    </p>
+      <p>Dose: </p>
+      <p>Frequency</p>
+      <p>Date Started:</p>
+      <p>Notes</p>
+      <a href="#meds"><button class="btn btn-default" >Add a Medication</button> </a>
+  </div>
+
+  <div>
+    <h2>Surgical History</h2>
+    <p>Surgical Procedure(s)</p>
+    <p>Date</p>
+    <p>Surgeon:</p>
+    <p>Hospital:</p>
+    <p>Notes</p>
+    <button class="btn btn-default" type="submit">Add a Surgical Procedure</button>  
+  </div>
+      
+  
+
+    
+     
+    
+    
+    

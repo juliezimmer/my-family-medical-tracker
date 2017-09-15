@@ -1,9 +1,9 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var medicalApp = angular.module('medicalApp', ['ngRoute']);
 
-/// Routes ///
-myApp.config(function($routeProvider, $locationProvider) {
+//These route the user to different views depending on the url
+medicalApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
-  console.log('myApp -- config')
+  console.log('medicalApp -- config')
   $routeProvider
     .when('/home', {
       templateUrl: '/views/templates/home.html',
@@ -22,15 +22,17 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
-    .when('/info', {
-      templateUrl: '/views/templates/info.html',
-      controller: 'InfoController',
-      resolve: {
+    .when('/meds', {
+       templateUrl: '/views/templates/meds.html',
+       controller: 'MedController as mc',
+       controller: "UserController as uc",
+       resolve: {
         getuser : function(UserService){
           return UserService.getuser();
         }
       }
     })
+    
     .otherwise({
       redirectTo: 'home'
     });

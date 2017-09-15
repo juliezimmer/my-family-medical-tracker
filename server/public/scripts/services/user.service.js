@@ -1,4 +1,4 @@
-myApp.factory('UserService', function($http, $location){
+medicalApp.factory('UserService', function($http, $location){
   console.log('UserService Loaded');
 
   var userObject = {};
@@ -8,11 +8,17 @@ myApp.factory('UserService', function($http, $location){
 
     getuser : function(){
       console.log('UserService -- getuser');
-      $http.get('/user').then(function(response) {
+      $http({
+        method: 'GET',
+        url: '/user'
+      }).then(function(response) { /*this function is added for authentication in the application. This verifies that the user is currently logged in and in a active session. */
           if(response.data.username) {
               // user has a curret session on the server
-              userObject.userName = response.data.username;
+              userObject.userName = response.data.username; /* this contains the response with the username, which is an email address */
+              userObject.firstname = response.data.firstname;//This contains the response with the user's firstname.
+              userObject.dateOfBirth = response.data.dateOfBirth; /* this contains the response with the user's date of birth */
               console.log('UserService -- getuser -- User Data: ', userObject.userName);
+              console.log("UserService first Name:", userObject.firstname);
           } else {
               console.log('UserService -- getuser -- failure');
               // user has no session, bounce them back to the login page

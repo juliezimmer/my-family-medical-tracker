@@ -1,0 +1,59 @@
+<!-- this is the view the user sees when "Add a Medication" is clicked while in the user.html view -->
+<div id="header" class="container" class="col-lg-12">
+     <img src=https://www.walgreens.com/images/adaptive/share/images/retail-mail-service-img.jpg>
+    <h1>{{uc.userObject.firstname}}'s Medication History</h1>
+    <h2>Add a Medication</h2>
+
+<div class="container" >
+    <form ng-submit="mc.addMed()">
+        <div>
+            <label for="medication">Medication</label>
+            <input type="text" ng-model="mc.medObject.medication" /> 
+        </div>
+        
+        <div>
+            <label for="prescriber">Prescriber</label>
+            <input type="text" ng-model="mc.medObject.prescriber" />
+        </div>
+
+        <div>
+            <label for="dose">Dose</label>
+            <input type="dose" ng-model="mc.medObject.dose" />    
+        </div>
+
+        <div>
+            <h4>Frequency</h4>
+            <select>
+                <option value="once">qday</option>
+                <option value="twice">bid</option>
+                <option value="threex">tid</option>
+                <option value="fourx">qid</option>
+                <option value="eo">qod</option>
+                <option value="asneeded">prn</option>
+                <option value="other">other</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="StartDate">Start Date</label>
+            <input type="date" ng-model="mc.medObject.startDate"  />
+        </div>
+        
+        <div>
+            <label for="notes">Notes</label>
+            <input type="notes" ng-model="mc.medObject.notes" />
+        </div>
+        <div>
+            <button class="btn btn-default" ng-click="mc.addMed()">Add Medication</button>
+        </div>
+    </div>            
+    
+
+
+
+
+
+
+
+
+</form>
