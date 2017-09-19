@@ -1,9 +1,14 @@
 <!-- this is the landing view, what the user sees when the website URL is entered in the address bar (AKA the Home page)  using the path: (URL) '/home'  -->
+<div class="container-fluid">
+    <div class="rows">
+        <div class="col-md-4"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqRIB5QWcXb7K_Z5WZ3CDUerUBquc05kJDUh_u_ibBh1978TGu"></div>
+        <div class="col-md-8"><h1>Welcome to My Family Medical Tracker</h1>
+        <h1>The Place to Track Your Family Medical History</h1></div>
+    </div>
 
-<div id="header" class="container" class="col-lg-12">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqRIB5QWcXb7K_Z5WZ3CDUerUBquc05kJDUh_u_ibBh1978TGu">
-    <h1>Welcome to My Family Medical Tracker</h1>
-    <h1>The Place to Track Your Family Medical History</h1>
+    
+    
+    
     <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">
         <!-- if the user tries to login and isn't a registered user, an alert message pops up - {{lc.message}} -->
         {{lc.message}}</h1>
@@ -18,13 +23,15 @@
             </div>
 
             <div>
-                <input class="btn btn-default" type="submit" name="submit" value="Log In" />
+                <input class="btn" type="submit" name="submit" value="Log In" />
                 <a href="#register">
                     <h4>Not a Member? Register Here!</h4>
                 </a>
             </div>
         </form>
+    </div>
 </div>
 <div id="background">
     <img src="http://www.birmingham.ac.uk/Images/College-MDS-only/facilities/cpd/1250x394/minimed1250x394.jpg">
+
 </div>

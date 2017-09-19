@@ -31,7 +31,15 @@ medicalApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
+    .when('/doctor', {
+      templateUrl: '/views/templates/doctor.html',
+      controller:'DoctorController as dc' 
+    })
+    .when('/surgery', {
+      templateUrl: '/views/templates/surgery.html',
+      controller: 'SurgeryController as sc'
+    })
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: '/home'
     });
 });
