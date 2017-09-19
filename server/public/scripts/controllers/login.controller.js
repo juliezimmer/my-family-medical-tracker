@@ -9,6 +9,7 @@ medicalApp.controller('LoginController', function($http, $location, UserService)
 
     vm.login = function() {
       console.log('LoginController -- login');
+      /* the code on line 13 checks for the presence of a username and password being enterd in the text fields on the DOM.  If nothing has been entered, a message is returned that says: Enter your username and password. */
       if(vm.user.username === '' || vm.user.password === '') {
         vm.message = "Enter your username and password!";
       } else {

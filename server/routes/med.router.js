@@ -5,39 +5,36 @@ var path = require('path');
 var Medications = require('../models/medSchema.js');
 
 
-router.get('/', function(req, res, next) {
-    console.log('get /register route');
-    res.sendFile(path.resolve(__dirname, '../public/views/templates/meds.html'));
-  });
-  
-  // Handles POST request with new user data coming from logincontroller
-  router.post('/', function(req, res, next) {
-    console.log('post /register route');
-    
-      var medicationToSave = { //this is the request object
-        //these variables on req.body MUST match what is used on the DOM in the mc.medication.variable where the user enters their information
-        medication : req.body.medication,
-        prescriber : req.body.prescriber,
-        dose: req.body.dose,
-        frequency: req.body.frequency,
-        startDate: req/body/startDate,
-        notes: req.body.notes
-        };
+// router.get('/', function(req, res, next) {
+//     //console.log('get /register route');
+//     res.sendFile(path.resolve(__dirname, '../public/views/templates/meds.html'));
+//   });
 
-    //This medication is now saved to the DB
-    //Medications refers specifically to the schema.  See "Medications" as defined at the top of the file.
-    Medications.create(medicationToSace, function(err, post) {
-        console.log('post /medication -- Medication.create');
-           if(err) {
-             console.log('post /medication -- Medication.create -- failure');
-             res.sendStatus(500);
-           } else {
-             console.log('post /medication  -- Medication.create -- success');
-             res.sendStatus(201);
-           }
-      });
+// Handles POST request with new user data coming from logincontroller
+router.post('/', function (req, res) {
+  console.log('post /med route');
+  // we turned the req.body into the schema we made
+  var newMedicationToSave = new Medications(req.body);
+
+  //This medication is now saved to the DB
+  //Medications refers specifically to the schema.  See "Medications" as defined at the top of the file.
+
+  //simple save using the variable we created using the schema and req.body
+  newMedicationToSave.save(function (err, post) {
+    console.log('post /medication -- Medication.create');
+    if (err) {
+      console.log('post /medication -- Medication.create -- failure');
+      res.sendStatus(500);
+    } else {
+      console.log('post /medication  -- Medication.create -- success');
+      res.sendStatus(201);
+    }
   });
-  
-  
-  module.exports = router;
-    
+});
+
+router.get('/', function(req,res){
+  medications.find({})
+})
+
+
+module.exports = router;

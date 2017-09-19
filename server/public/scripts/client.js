@@ -25,14 +25,12 @@ medicalApp.config(function($routeProvider, $locationProvider) {
     .when('/meds', {
        templateUrl: '/views/templates/meds.html',
        controller: 'MedController as mc',
-       controller: "UserController as uc",
        resolve: {
         getuser : function(UserService){
           return UserService.getuser();
         }
       }
     })
-    
     .otherwise({
       redirectTo: 'home'
     });

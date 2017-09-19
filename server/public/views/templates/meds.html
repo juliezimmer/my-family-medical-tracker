@@ -1,11 +1,11 @@
 <!-- this is the view the user sees when "Add a Medication" is clicked while in the user.html view -->
 <div id="header" class="container" class="col-lg-12">
      <img src=https://www.walgreens.com/images/adaptive/share/images/retail-mail-service-img.jpg>
-    <h1>{{uc.userObject.firstname}}'s Medication History</h1>
+    <h1 ng-controller="UserController as uc">{{uc.userObject.firstname}}'s Medication History</h1>
     <h2>Add a Medication</h2>
 
 <div class="container" >
-    <form ng-submit="mc.addMed()">
+    <form>
         <div>
             <label for="medication">Medication</label>
             <input type="text" ng-model="mc.medObject.medication" /> 
@@ -44,10 +44,10 @@
             <input type="notes" ng-model="mc.medObject.notes" />
         </div>
         <div>
-            <button class="btn btn-default" ng-click="mc.addMed()">Add Medication</button>
+            <button class="btn btn-default" ng-click="mc.addMed(mc.medObject)">Add Medication</button>
         </div>
     </div>            
-    
+    {{mc}}
 
 
 

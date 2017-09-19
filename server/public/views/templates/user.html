@@ -33,11 +33,12 @@
   
   <div>
       <h2>Current Medications</h2>
-      <p>Medication:    </p>
-      <p>Dose: </p>
-      <p>Frequency</p>
-      <p>Date Started:</p>
-      <p>Notes</p>
+      <p>Medication: {{mc.medObject.medication}}    </p>
+      <p>Prescriber: {{mc.medObject.prescriber}}</p>
+      <p>Dose: {{mc.medObject.dose}}</p>
+      <p>Frequency: {{mc.medObject.frequency}}</p>
+      <p>Date Started: {{mc.medObject.frequency}}</p>
+      <p>Notes {{mc.medObject.notes}}</p>
       <a href="#meds"><button class="btn btn-default" >Add a Medication</button> </a>
   </div>
 
