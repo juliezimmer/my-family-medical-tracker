@@ -28,7 +28,7 @@ router.get('/', function(req,res){
     Providers.find({}, function (err, data){
         if (err) {
             console.log('found user providers:', data);
-            res.sendStatus(500):
+            res.sendStatus(500);
         } else {
             console.log('found providers:', data);
             res.send(data); //this 'data' moves back to provider.service

@@ -14,7 +14,8 @@ var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
 var mailRouter = require('./routes/mail.router');
 var medRouter = require('./routes/med.router');
-
+var providerRouter = require('./routes/provider.router');
+var surgeryRouter = require('./routes/surgery.router');
 var port = process.env.PORT || 5000;
 
 // Body parser middleware
@@ -36,8 +37,10 @@ app.use(passport.session());
 app.use('/register', registerRouter);
 app.use('/user', userRouter);
 app.use('/meds', medRouter);
+app.use('/provider', providerRouter);
+app.use('/surgery', surgeryRouter);
 
-//for modemailer 
+//for nodemailer 
 app.use('/mail', mailRouter);
 
 // Catch all bucket, must be last!

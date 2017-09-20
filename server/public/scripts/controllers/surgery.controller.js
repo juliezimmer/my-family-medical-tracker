@@ -5,19 +5,22 @@ medicalApp.controller('SurgeryController', function(SurgeryService, UserService)
     vm.SurgeryService = SurgeryService;
     vm.userObject = UserService.userObject;
     vm.userSurgeries = SurgeryService.userSurgeries;
-    // 
-    vm.addMed = function (medObject) {
+    
+    /* vm.addMed = function (medObject) {
         console.log('addMed function was clicked:', medObject);
         MedService.addMed(medObject);
-    }
+    } */
 
-    vm.getMed = function() {
-         console.log('getMed function has been accessed');
-         MedService.getMed(vm.medObject);
+    vm.getSurgeries = function() {
+         console.log('getSurgeries function has been accessed');
+         SurgeryService.getSurgery();
+         console.log('surgeries on the controller:', vm.userSurgeries);
      }
 
-    vm.editMed = function() {
-        console.log('editMed function was clicked:' , vm.medObject);
-        MedService.editMed(vm.medObject);
+     vm.getSurgeries();
+
+    vm.editSurgery = function() {
+        console.log('editSurgery function was clicked:' , vm.surgeryObject);
+        SurgeryService.editSurgery(vm.surgeryObject);
     }
 });

@@ -1,0 +1,37 @@
+<!-- this is the view the user sees when "Add a Surgical Procedure" is clicked while in the user.html view -->
+<div>
+    <div id="header" class="col-lg-12">
+    <h2>Add a Surgical ProdecureCare</h2>
+    <div>
+        <form>
+            <div>
+                <label for="procedure">Surgical Procedure</label>
+                <input type="text" ng-model="sc.surgeryObject.procedure" /> 
+            </div>
+            
+            <div>
+                <label for="date">Date</label>
+                <input type="date" ng-model="sc.surgeryObject.date" />
+            </div>
+        
+            <div>
+                <label for="surgeon">Surgeon</label>
+                <input type="text" ng-model="sc.surgeryObject.surgeon" /> 
+            </div>  
+            
+            <div>
+                <label for="hospital">Hospital</label>
+                <input type="text" ng-model="sc.surgeryObject.hospital"/>
+            </div>
+
+            <div>
+                <label for="notes">Notes</label>
+                <input type="text" ng-model="sc.surgeryObject.notes"/>
+            </div>
+        
+            <div>
+                <button class="btn" ng-click="sc.SurgeryService.addSurgery(sc.surgeryObject)">Add a Surgical Procedure</button>
+                <a href="#user"><button class="btn">Cancel</button></a>
+                </div>
+            </div>
+        </div>            
