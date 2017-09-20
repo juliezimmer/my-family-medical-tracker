@@ -5,11 +5,12 @@ var SALT_WORK_FACTOR = 10;
 
 // Mongoose Schema
 var UserSchema = new Schema({
-    username: {type: String, required: true, index: {unique: true}},
+    username: {type: String, required: true},
     password: {type: String, required: true},
     firstname: {type:String, required: true},
     lastname: String,
     dateOfBirth: {type: Date, required:true},
+    UserId: {type: String, required: true, index: {unique: true}}
 });
 
 // Called before adding a new user to the DB. Encrypts password.
@@ -43,7 +44,6 @@ UserSchema.methods.comparePassword = function(candidatePassword, callback) {
         if(err) {
           return callback(err);
         }
-
         callback(null, isMatch);
     });
 };

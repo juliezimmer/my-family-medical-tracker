@@ -6,7 +6,8 @@ var ProviderSchema = new Schema({
     name: {type: String, required: true},
     specialty: String, 
     location: String,
-    phone: String
+    phone: String,
+    //UserId: String
 });
 
 module.exports = mongoose.model('Provider', ProviderSchema);

@@ -31,9 +31,14 @@ medicalApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
-    .when('/doctor', {
-      templateUrl: '/views/templates/doctor.html',
-      controller:'DoctorController as dc' 
+    .when('/provider', {
+      templateUrl: '/views/templates/provider.html',
+      controller:'ProviderController as pc', 
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
     })
     .when('/surgery', {
       templateUrl: '/views/templates/surgery.html',

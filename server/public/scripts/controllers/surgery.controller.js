@@ -1,9 +1,10 @@
-medicalApp.controller('SurgeryController', function(MedService, UserService) {/*not sure which services to bring into this controller */
+medicalApp.controller('SurgeryController', function(SurgeryService, UserService) {/*not sure which services to bring into this controller */
     console.log('SurgeryController created');
     //"this" refers to the SurgeryController
     var vm = this;
-    vm.MedService = MedService;
+    vm.SurgeryService = SurgeryService;
     vm.userObject = UserService.userObject;
+    vm.userSurgeries = SurgeryService.userSurgeries;
     // 
     vm.addMed = function (medObject) {
         console.log('addMed function was clicked:', medObject);

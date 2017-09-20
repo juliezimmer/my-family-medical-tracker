@@ -2,7 +2,7 @@ medicalApp.service('MedService', function ($http, $location) {
     console.log('MedService Loaded');
     //"this" refers to MedService
     var vm = this;
-    vm.userMedications = [];
+    vm.userMedications = { list: [] };
     //this came from the med controller
     // vm.addMed creates MedService.addMed
     vm.addMed = function (newMedication) {
@@ -18,15 +18,15 @@ medicalApp.service('MedService', function ($http, $location) {
         getMeds();
     }//end of addMed function/http POST request
 
-     function getMeds() {
-         $http({
-             method: "GET",
-             url: '/meds'
-         }).then(function (response) {
-             console.log('getting Meds for the user profile:' , response.data);
-             vm.userMedication = response.data;
-             
+    //vm.getMed creates MedService.getMed
+    vm.getMed = function () {
+        $http({
+            method: "GET",
+            url: '/meds'
+        }).then(function (response) {
+            vm.userMedications.list = response.data; 
+            console.log('service getting Meds for the user profile:', vm.userMedications);
         });
-     }
-     
+    }
+
 });

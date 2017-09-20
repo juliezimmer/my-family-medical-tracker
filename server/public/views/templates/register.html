@@ -25,7 +25,7 @@
         <input type="text" ng-model="lc.user.lastname" />
     <div>
         <label for="DOB">Date of Birth:</label>
-        <input type="date" ng-model="lc.user.dateOfBirth"  />
+        <input type="date" data-date-format="MM/DD/YYYY" ng-model="lc.user.dateOfBirth"  />
     </div>
     <button class="btn" ng-click="lc.sendMail()">Create Account</button>
    

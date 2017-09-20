@@ -1,10 +1,9 @@
 <!-- this is the view the user sees when "Add a Medication" is clicked while in the user.html view -->
 <div>
-<div id="header" class="col-lg-12">
+    <div id="header" class="col-lg-12">
      <img src=https://www.walgreens.com/images/adaptive/share/images/retail-mail-service-img.jpg>
 
     <h2>Add a Medication</h2>
-
 <div>
     <form>
         <div>
@@ -19,7 +18,7 @@
 
         <div>
             <label for="dose">Dose</label>
-            <input type="dose" ng-model="mc.medObject.dose" />    
+            <input type="text" ng-model="mc.medObject.dose" />    
         </div>
 
         <div>
@@ -37,7 +36,7 @@
 
         <div>
             <label for="StartDate">Start Date</label>
-            <input type="date" ng-model="mc.medObject.startDate"  />
+            <input type="date" data-date-format="MM/DD/YYYY" ng-model="mc.medObject.startDate"/>
         </div>
         
         <div>
@@ -48,15 +47,6 @@
             <button class="btn" ng-click="mc.MedService.addMed(mc.medObject)">Add Medication</button>
             <a href="#user"><button class="btn">Cancel</button></a>
         </div>
+    </form>
     </div>
 </div>            
-    {{mc}}
-
-
-
-
-
-
-
-
-</form>
