@@ -48,47 +48,24 @@
     </thead>
     <tbody>
         <tr>
-          <td>Atenelol</td>
-          <td>25 mg.</td>
-          <td>qd</td>
-          <td>Suzanne Permuth, MD</td>
-          <td>June 2013</td>
-          <td></td>
+          <td>{{mc.medication.medication}}</td>
+          <td>{{mc.medication.prescriber}}</td>
+          <td>{{mc.medication.dose}}</td>
+          <td>{{mc.medication.frequency}}</td>
+          <td>{{mc.medication.startDate}}</td>
+          <td>{{mc.medication.notes}}</td>
         </tr>
-        <tr>
-          <td>Dexilant</td>
-          <td>60 mg.</td>
-          <td>qd</td>
-          <td>Suzanne Permuth, MD</td>
-          <td>June 2007</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Sumatriptan</td>
-          <td>100 mg.</td>
-          <td>PRN</td>
-          <td>Suzanne Permuth, MD</td>
-          <td>June 2013</td>
-          <td></td>
-        </tr>
-
-    </tbody>
+      </tbody>
   </table>
 </div>
 
-<!--
-</div>
-    <table class="table">
+<!-- ng-repeat="med in mc.medObject.list" -->
+
      
-      <p>Medication: {{mc.medObject.medication}}    </p>
-      <p>Prescriber: {{mc.medObject.prescriber}}</p>
-      <p>Dose: {{mc.medObject.dose}}</p>
-      <p>Frequency: {{mc.medObject.frequency}}</p>
-      <p>Date Started: {{mc.medObject.frequency}}</p>
-      <p>Notes {{mc.medObject.notes}}</p>
-    </table> -->
+      
+    <div>
       <a href="#meds"><button class="btn" type="submit">Add a Medication</button> </a>
-  </div>
+    </div>
 
   <div>
     <h2>Surgical History</h2>
@@ -102,14 +79,7 @@
 </div>
       
   <!--
-  <tr ng-repeat="med in mc.medObject.list">
-      <td>{{med.medication}}</td>
-      <td>{{med.prescriber}}</td>
-      <td>{{med.dose}}</td>
-      <td>{{med.frequency}}</td>
-      <td>{{med.startDate}}</td>
-      <td>{{med.notes}}</td>
-    </tr>
+  
   -->
      
     

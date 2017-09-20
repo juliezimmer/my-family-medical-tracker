@@ -33,8 +33,16 @@ router.post('/', function (req, res) {
 });
 
 router.get('/', function(req,res){
-  medications.find({})
-})
-
+  console.log('inside the med get router')
+  medications.find({}, function(err, data){
+    if (err) {
+      console.log("find err:", err);
+      res.sendStatus(500);
+    } else {
+      console.log('found data:', data);
+      res.send(data);
+    }//end of else
+  }) //end medications.find
+}); //end GET route
 
 module.exports = router;
