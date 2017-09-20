@@ -13,7 +13,10 @@ var Medications = require('../models/medSchema.js');
 router.post('/', function (req, res) {
   console.log('post /med route');
   // we turned the req.body into the schema we made
-  var newMedicationToSave = new Medications(req.body);
+  var medicationObject = req.body;
+  console.log(req.user);
+  medicationObject.userId = req.user.id;
+  var newMedicationToSave = new Medications(medicationObject);
 
   //This medication is now saved to the DB
   //Medications refers specifically to the schema.  See "Medications" as defined at the top of the file.
