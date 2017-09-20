@@ -6,6 +6,8 @@ medicalApp.controller('MedController', function (MedService, UserService) {
     vm.userObject = UserService.userObject;
     vm.userMeds = MedService.userMedications;
 
+    
+
     // vm.addMed = function (medObject) {
     //     console.log('addMed function was clicked:',medObject);
     //     MedService.addMed(medObject);

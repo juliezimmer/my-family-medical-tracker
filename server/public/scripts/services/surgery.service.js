@@ -1,6 +1,6 @@
 medicalApp.service('SurgeryService', function ($http, $location) {
     console.log('SurgeryService Loaded');
-    //"this" refers to MedService
+    //"this" refers to SurgeryService
     var vm = this;
     vm.userSurgeries = { list: [] };
     //this came from the surgery controller
@@ -15,10 +15,10 @@ medicalApp.service('SurgeryService', function ($http, $location) {
             $location.path('/user');
             console.log('new surgery saved to db: ', response.data);
         })
-        getSurgeries();
+        vm.getSurgery();
     }//end of addSurgery function/http POST request
 
-    //vm.getSurgery creates MedService.getMed
+    //vm.getSurgery creates SurgeryService.getSurgery
     vm.getSurgery = function () {
         $http({
             method: "GET",

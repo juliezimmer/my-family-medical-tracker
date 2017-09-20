@@ -17,6 +17,7 @@ medicalApp.controller('LoginController', function($http, $location, UserService)
         $http.post('/', vm.user).then(function(response) {
           if(response.data.username) {
             console.log('LoginController -- login -- success: ', response.data);
+           
             // location works with SPA (ng-route)
             $location.path('/user'); // http://localhost:5000/#/user
           } else {

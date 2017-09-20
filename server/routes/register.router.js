@@ -32,7 +32,7 @@ router.post('/', function(req, res, next) {
     Users.create(userToSave, function(err, post) {
       console.log('post /register -- User.create');
          if(err) {
-           console.log('post /register -- User.create -- failure');
+           console.log('post /register -- User.create -- failure' , err);
            res.sendStatus(500);
          } else {
            console.log('post /register -- User.create -- success');

@@ -64,7 +64,7 @@
       <tr>
         <th>Medication</th>
         <th>Dose</th>
-        <th>frequency</th>
+        <th>Frequency</th>
         <th>Prescriber</th>
         <th>Date Started</th>
         <th>Notes</th>
@@ -77,7 +77,7 @@
           <td>{{med.dose}}</td>
           <td>{{med.frequency}}</td>
           <td>{{med.startDate | date}}</td>
-          <td>{{med.notes}}</td> -->
+          <td>{{med.notes}}</td>
         </tr>
       </tbody>
   </table>
@@ -100,7 +100,7 @@
         <tbody>
             <tr ng-repeat="surgery in sc.userSurgeries.list">
               <td>{{surgery.procedure}}</td>
-              <td>{{surgery.date}}</td>
+              <td>{{surgery.date | date}}</td>
               <td>{{surgery.surgeon}}</td>
               <td>{{surgery.hospital}}</td>
               <td>{{surgery.notes}}</td>
