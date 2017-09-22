@@ -1,37 +1,45 @@
 <!-- this is the landing view, what the user sees when the website URL is entered in the address bar (AKA the Home page)  using the path: (URL) '/home'  -->
-<div class="container-fluid">
-    <div class="rows">
-        <div class="col-md-4"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqRIB5QWcXb7K_Z5WZ3CDUerUBquc05kJDUh_u_ibBh1978TGu"></div>
-        <div class="col-md-8"><h1>Welcome to My Family Medical Tracker</h1>
-        <h1>The Place to Track Your Family Medical History</h1></div>
-    </div>
+<div class="jumbotron">
+    <div id="header">
+        <div class="row">
+            <div class="col-md-8">
+                <div>
+                    <h1>Welcome to My Family Medical Tracker</h1>
+                    <h1>The Place to Track Your Family Medical History</h1>
+                </div>
+                <form ng-submit="lc.login()">
+                    <div class="userbox">
+                        <label for="username">Username:</label>
+                        <input type="text" ng-model="lc.user.username" />
+                    </div>
+                    <div class="pwbox">
+                        <label for="password">Password:</label>
+                        <input type="password" ng-model="lc.user.password" />
+                    </div>
 
-    
-    
-    
-    <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">
-        <!-- if the user tries to login and isn't a registered user, an alert message pops up - {{lc.message}} -->
-        {{lc.message}}</h1>
-        <form ng-submit="lc.login()">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" ng-model="lc.user.username" />
+                    <div>
+                        </br>
+                        <input class="btn" type="submit" name="submit" value="Log In" />
+                        </br>
+                        <a href="#register">
+                            <h4 class="register">Not a Member? Register Here!</h4>
+                        </a>
+                    </div>
+                </form>
             </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" ng-model="lc.user.password" />
+            <div class="col-md-4">
+                <img class="resize img-responsive img-circle" src="https://www.maxhealthcare.in/sites/default/files/blogs/top_banner/2016/Feb/04/stethoscope_1.jpg"
+                    alt="heart">
             </div>
+        </div>
 
-            <div>
-                <input class="btn" type="submit" name="submit" value="Log In" />
-                <a href="#register">
-                    <h4>Not a Member? Register Here!</h4>
-                </a>
-            </div>
-        </form>
+        <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">
+            <!-- if the user tries to login and isn't a registered user, an alert message pops up - {{lc.message}} -->
+            {{lc.message}}</h1>
+
     </div>
 </div>
-<div id="background">
-    <img src="http://www.birmingham.ac.uk/Images/College-MDS-only/facilities/cpd/1250x394/minimed1250x394.jpg">
+<div>
+    <img class="img-responsive" src="http://www.birmingham.ac.uk/Images/College-MDS-only/facilities/cpd/1250x394/minimed1250x394.jpg">
 
 </div>
