@@ -12,26 +12,26 @@
         </div>
         
         <div>
-            <label for="prescriber">Prescriber</label>
-            <input type="text" ng-model="mc.medObject.prescriber" />
-        </div>
-
-        <div>
             <label for="dose">Dose</label>
             <input type="text" ng-model="mc.medObject.dose" />    
         </div>
 
         <div>
             <h4>Frequency</h4>
-            <select>
-                <option value="once">qday</option>
-                <option value="twice">bid</option>
-                <option value="threex">tid</option>
-                <option value="fourx">qid</option>
-                <option value="eo">qod</option>
-                <option value="asneeded">prn</option>
-                <option value="other">other</option>
-            </select>
+                <select ng-model="mc.medObject.frequency">
+                    <option value="qday">qday</option>
+                    <option value="bid">bid</option>
+                    <option value="tid">tid</option>
+                    <option value="qid">qid</option>
+                    <option value="qod">qod</option>
+                    <option value="prn">prn</option>
+                    <option value="other">other</option>
+                </select>
+        </div>
+
+        <div>
+            <label for="prescriber">Prescriber</label>
+            <input type="text" ng-model="mc.medObject.prescriber" />
         </div>
 
         <div>
@@ -44,9 +44,9 @@
             <input type="notes" ng-model="mc.medObject.notes" />
         </div>
         <div>
-            <button class="btn" ng-click="mc.MedService.addMed(mc.medObject)">Add Medication</button>
-            <a href="#user"><button class="btn">Cancel</button></a>
+            <button class="btn btn-sm" ng-click="mc.MedService.addMed(mc.medObject)">Add Medication</button>
+            <a href="#user"><button class="btn btn-sm">Cancel</button></a>
         </div>
     </form>
-    </div>
+</div>
 </div>            

@@ -42,6 +42,7 @@ medicalApp.controller('LoginController', function($http, $location, UserService)
           console.log('LoginController -- registerUser -- success');
           $location.path('/home');
         }).catch(function(response) {
+          console.log('response:', response);
           console.log('LoginController -- registerUser -- error');
           vm.message = "Please try again."
         });

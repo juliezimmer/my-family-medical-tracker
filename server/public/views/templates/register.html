@@ -5,32 +5,42 @@
     <h1>Welcome to My Family Medical Tracker</h1>
     <h1>Create an Account</h1>
 </div>
-<div class="container">
-  <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
-  <form ng-submit="lc.registerUser()">
-    <div>
-        <label for="username">Enter your email (this will be your username)</label>
-        <input type="text" ng-model="lc.user.username" />
+    <div class="container">
+        <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
+            <form ng-submit="lc.registerUser()">
+    
+<form>            
+    <div class="form-group">
+        <label for="email">Enter your email (this will be your username)</label>
+        <input type="email" class="form-control" id="email" ng-model="lc.user.username" />
     </div>
     <div>
-        <label for="password">Choose a Passwword:</label>
-        <input type="password" ng-model="lc.user.password" />
+        <div class="form-group">
+            <label for="pwd">Choose a Passwword:</label>
+            <input type="password" class="form-control" id="pwd" ng-model="lc.user.password" />
+        </div>
     </div>
     <div>
-        <label for="FirstName">First Name:</label>
-        <input type="text" ng-model="lc.user.firstname" />
+        <div class="form-group">
+            <label for="FirstName">First Name:</label>
+            <input type="text" class="form-control" ng-model="lc.user.firstname" />
+        </div>
     </div>
     <div>
-        <label for="LastName">Last Name:</label>
-        <input type="text" ng-model="lc.user.lastname" />
+        <div>
+            <label for="LastName">Last Name:</label>
+            <input type="text" class="form-control" ng-model="lc.user.lastname" />
+        </div>
+    </div>
     <div>
         <label for="DOB">Date of Birth:</label>
-        <input type="date" data-date-format="MM/DD/YYYY" ng-model="lc.user.dateOfBirth"  />
+        <input type="date" data-date-format="MM/DD/YYYY" class="form-control" ng-model="lc.user.dateOfBirth"  />
     </div>
-    <button class="btn" ng-click="lc.sendMail()">Create Account</button>
-   
-    <a href="#home">Cancel</a>
-    
+    <br />
+    <div>
+        <button class="btn" ng-click="lc.sendMail()">Create Account</button>
+        <a href="#home"><button class="btn">Cancel</button></a>
+    </div>
   </form>
  </div>
 </div>

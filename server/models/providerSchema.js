@@ -7,7 +7,7 @@ var ProviderSchema = new Schema({
     specialty: String, 
     location: String,
     phone: String,
-    //UserId: String
+    username: String
 });
 
 module.exports = mongoose.model('Provider', ProviderSchema);

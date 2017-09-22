@@ -8,7 +8,7 @@ var SurgerySchema= new Schema({
     hospital: String,
     surgeon: String,
     notes: String,
-    UserId: String
+    username: String
     });
 
 module.exports = mongoose.model('Surgery', SurgerySchema);

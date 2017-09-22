@@ -19,8 +19,20 @@ medicalApp.controller('SurgeryController', function(SurgeryService, UserService)
 
      vm.getSurgeries();
 
-    vm.editSurgery = function() {
-        console.log('editSurgery function was clicked:' , vm.surgeryObject);
-        SurgeryService.editSurgery(vm.surgeryObject);
+     vm.openEdit =function(surgery){
+         console.log('openSurgery function was clicked/line 23 surgery.controller:' , surgery);
+         surgery.editMode = true;
+     }
+
+    vm.saveSurgeryChanges = function(surgery) {
+        console.log('Inside saveSurgeryChanges line  28 in surgery.controller.js:', surgery);
+        SurgeryService.saveSurgeryChanges(surgery);
+        surgery.editMode = false;
+        vm.getSurgeries();
+    }
+
+    vm.deleteSurgery = function(surgeryId) {
+        console.log('Inside deleteSurgery line 35 in surgery.controller.js:', surgeryId);
+        SurgeryService.deleteSurgery(surgeryId);
     }
 });
