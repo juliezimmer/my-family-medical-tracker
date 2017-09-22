@@ -63,7 +63,7 @@ router.put('/', function (req,res){
             prescriber: medObject.prescriber,
             dose: medObject.dose,
             frequency: medObject.frequency,
-            srtartDate: medObject.startDate,
+            startDate: medObject.startDate,
             notes: medObject.notes}
           },
     function (err, data) {
