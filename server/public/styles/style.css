@@ -1,13 +1,80 @@
-* .btn {
-  background-color: #D8344A;
-  color: white;
-  font-family: sans-serif;
-} 
+* {
+  color: #001a66;
+}
+
+.container-fluid {
+  margin-top: 5px;
+  
+}
 
 .jumbotron {
   background-color: #379EDA;
   font-family: sans-serif;
-  color:black; 
+  color:#001a66;
+  font-weight: bold;
+  padding: 20px 10px 10px 20px;
+  border-top: 50px;
+  margin-bottom: 0rem;
+}
+
+.dob-type{
+   text-indent:50px;
+   }
+
+.logout-button {
+  text-indent: 50px;
+}
+
+.greeting{
+   text-indent: 30px;
+}
+
+.addMed {
+  margin-top: 15%;
+  margin-left: 30px;
+  color: #D8344A;
+  font-size:50px;
+}
+
+.bg-overlay {
+  background: linear-gradient(rgba(121, 147, 161, 0.8), rgba(121, 147, 161, 0.8)), 
+  url("https://multiplesclerosisnewstoday.com/wp-content/uploads/2017/01/shutterstock_170072552.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff; 
+  height: 100%;
+  width: 100%;
+  padding-bottom: 20px;
+ } 
+
+#provider.bg-overlay {
+  background: linear-gradient(rgba(116, 142, 156, 0.7), rgba(121, 147, 161, 0.7)), 
+  url("https://archive.cdph.ca.gov/programs/hai/PublishingImages/86807460cropped.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+#surgery.bg-overlay {
+  background: linear-gradient(rgba(55, 158, 218, 0.48), rgba(55, 158, 218, 0.48)), 
+  url("https://www.physiciansweekly.com/wp-content/uploads/2016/04/Improve-Qual-Colorectal-Surgery-Feature.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 20px
+}
+
+.medForm {
+  padding: 20px;
+  border: 20px;
 }
 
 img.resize {
@@ -15,6 +82,13 @@ img.resize {
   width: 300px;
   border-radius:50%;
   border: 15px solid #D8344A; 
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 2px solid rgb(6, 41, 139);
 }
 
 .userbox{
@@ -32,29 +106,15 @@ img.resize {
 
 thead {
   background-color: #379EDA;
+  max-width: 100%;
 }
-
-.table {
-  width: 100%;
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 14px;
-}
-
+ 
 #entryForm {
   margin-top: 14px;
 }
 
 #container {
   margin-top: 10px;
-}
-
- p{
-  margin-top : 14px;
 }
 
 .message {
@@ -95,19 +155,3 @@ li a:hover {
   text-decoration: underline;
   color: #eee;
 }
-/*
-.instructions  h1 {
-  font-size: 32px;
-  font-weight: 600;
-}
-
-.instructions {
-  background-color: #333333;
-  color: #DDDDDD;
-  padding: 15px;
-}
-
-#entryForm {
-  margin-top: 14px;
-}
-/

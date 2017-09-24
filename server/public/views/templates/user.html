@@ -1,46 +1,42 @@
 <!-- This is where the user builds their profile and makes any edits or deletions to content already added. -->
 <div class="jumbotron">
-  <div class="rows">
-    <div class="col-md-8">
-      <h1>Welcome to My Family Medical Tracker, {{uc.userObject.firstname}}!</h1>
+  <div class="row no-gutters">
+    <div class="col-lg-8">
+      <div class="greeting">
+        <h1>Welcome to My Medi-Tracker, {{uc.userObject.firstname}}!</h1>
+      </div>
+
+      <div class="dob-type">
+        <p class="h3">DOB: {{uc.userObject.dateOfBirth | date}}</p>
+        <p class="h3">Blood Type:
+          <select>
+            <option value="Apos">A+</option>
+            <option value="Aneg">A-</option>
+            <option value="Bpos">B+</option>
+            <option value="Bneg">B-</option>
+            <option value="ABpos">AB+</option>
+            <option value="ABneg">AB-</option>
+            <option value="Opos">O+</option>
+            <option value="Oneg">O-</option>
+          </select>
+        </p>
+      </div>
+
+      <div class="logout-button">
+        <a href="#home"><button class="btn btn-danger" type="submit">Log Out</button></a>
+      </div>
     </div>
-    <div class="col-md-4">
-      <img src=""
+    <div class="col-lg-4">
+      <img class="resize img-responsive img-circle" src="https://www.maxhealthcare.in/sites/default/files/blogs/top_banner/2016/Feb/04/stethoscope_1.jpg">
     </div> 
-  </div>
-  
-  <div class="rows">
-    <div clsss="col-md-6">
-      <h3>DOB: {{uc.userObject.dateOfBirth | date}}</h3>
-    </div>
-    <div class="col-md-5">
-      <h3>Blood Type:
-        <select>
-          <option value="Apos">A+</option>
-          <option value="Aneg">A-</option>
-          <option value="Bpos">B+</option>
-          <option value="Bneg">B-</option>
-          <option value="ABpos">AB+</option>
-          <option value="ABneg">AB-</option>
-          <option value="Opos">O+</option>
-          <option value="Oneg">O-</option>
-        </select>
-      </h3>
-    </div>
-    <div class="col-md-1">
-      <a href="#home"><button class="btn" type="submit">Log Out</button></a>
-    </div>
   </div>
 </div>
 
 
 <!--  ****************** HEALTH CARE PROVIDERS ****************** -->
-<div ng-controller="ProviderController as pc">
-  <div class="container-fluid"> 
-    <h2>Health Care Providers</h2>
-  </div> 
-  <div class="container-fluid">
-    <table class="table table-striped">
+<div class="container-fluid" ng-controller="ProviderController as pc">
+  <h4>Health Care Providers</h4>
+    <table class="table table-sm">
       <thead>
         <tr>
           <th>Name</th>
@@ -49,48 +45,49 @@
           <th>Phone</th>
           <th></th>
           <th></th>
+          <th></th>
         </tr>
       </thead>
-    <tbody>
-      <tr ng-repeat="provider in pc.userProviders.list">
-        <td><a ng-hide="provider.editMode">{{provider.name}}</a><input ng-model="provider.name" ng-show="provider.editMode"></td>
-        <td><a ng-hide="provider.editMode">{{provider.specialty}}</a><input ng-model="provider.specialty" ng-show="provider.editMode"></td>
-        <td><a ng-hide="provider.editMode">{{provider.location}}</a><input ng-model="provider.location" ng-show="provider.editMode"></td>
-        <td><a ng-hide="provider.editMode">{{provider.phone}}</a><input ng-model="provider.phone" ng-show="provider.editMode"></td>
-        <td><button class="btn btn-primary btn-xs" type="button" ng-click="pc.openEdit(provider)">Edit</button></td>
-        <td><button class="btn btn-primary btn-xs" type="submit" ng-show="provider.editMode" ng-click="pc.saveProviderChanges(provider)">Save Changes</button></td> 
-        <td><button class="btn btn-danger btn-xs" type="button" ng-click="pc.deleteProvider(provider._id)">Delete</button></td> 
-      </tr>
-    </tbody>
+      <tbody>
+        <tr ng-repeat="provider in pc.userProviders.list">
+          <td><a ng-hide="provider.editMode">{{provider.name}}</a><input ng-model="provider.name" ng-show="provider.editMode"></td>
+          <td><a ng-hide="provider.editMode">{{provider.specialty}}</a><input ng-model="provider.specialty" ng-show="provider.editMode"></td>
+          <td><a ng-hide="provider.editMode">{{provider.location}}</a><input ng-model="provider.location" ng-show="provider.editMode"></td>
+          <td><a ng-hide="provider.editMode">{{provider.phone}}</a><input ng-model="provider.phone" ng-show="provider.editMode"></td>
+          <td><button type="button" class="btn btn-primary btn-sm"  ng-click="pc.openEdit(provider)">Edit</button></td>
+          <td><button type="button" class="btn btn-primary btn-sm"  ng-show="provider.editMode" ng-click="pc.saveProviderChanges(provider)">Save Changes</button></td> 
+          <td><button type="button" class="btn btn-danger btn-sm" ng-click="pc.deleteProvider(provider._id)">Delete</button></td> 
+        </tr>
+      </tbody>
   </table>
-</div>
-  <a href="#provider"><button class="btn btn-sm" type="submit">Add a Healthcare Provider</button><a/> 
-</div>
-
-<!--  ****************** MEDICATIONS ****************** -->
   <div>
-    <h2>Current Medications</h2>
+    <a href="#provider"><button type="button" class="btn btn-danger btn-sm">Add a Health Care Provider</button><a/> 
   </div>
-  <div ng-controller="MedController as mc">
-
-  <table class="table table-striped table-hover col-lg-12">
-    <thead>
-      <tr>
-        <th>Medication</th>
-        <th>Dose</th>
-        <th>Frequency</th>
-        <th>Prescriber</th>
-        <th>Date Started</th>
-        <th>Notes</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
+</div>
+<hr/>
+<!--  ****************** MEDICATIONS ****************** -->
+<div class="container-fluid" ng-controller="MedController as mc">
+  <h4>Current Medications</h4>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>Medication</th>
+          <th>Dose</th>
+          <th>Frequency</th>
+          <th>Prescriber</th>
+          <th>Date Started</th>
+          <th>Notes</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
         <tr ng-repeat="med in mc.userMeds.list">
           <td><a ng-hide="med.editMode">{{med.medication}}</a><input ng-model="med.medication" ng-show="med.editMode"></td>
           <td><a ng-hide="med.editMode">{{med.dose}}</a><input ng-model="med.dose" ng-show="med.editMode"></td>   
-          <td><a ng-hide="med.editMode">{{med.frequency}}</a><select ng-model="med.frequency" ng-show="med.editMode">
+          <td><a ng-hide="med.editMode">{{med.frequency}}</a>
+            <select ng-model="med.frequency" ng-show="med.editMode">
               <option value="qday">qday</option>
               <option value="bid">bid</option>
               <option value="tid">tid</option>
@@ -98,54 +95,52 @@
               <option value="qod">qod</option>
               <option value="prn">prn</option>
               <option value="other">other</option>
-          </select></td>
+            </select></td>
           <td><a ng-hide="med.editMode">{{med.prescriber}}</a><input ng-model="med.prescriber" ng-show="med.editMode"></td>
           <td><a ng-hide="med.editMode">{{med.startDate | date}}</a><input type="date" ng-model="med.startDate" ng-show="med.editMode"></td>
           <td><a ng-hide="med.editMode">{{med.notes}}</a><input ng-model="med.notes" ng-show="med.editMode"></td>
-          <td><button class="btn btn-primary btn-xs" type="button" ng-click="mc.openEdit(med)">Edit</button></td>
-          <td><button class="btn btn-primary btn-xs" type="submit" ng-show="med.editMode" ng-click="mc.saveMedChanges(med)">Save Changes</button></td>
-          <td><button class="btn btn-danger btn-xs" type="button" ng-click="mc.deleteMed(med._id)">Delete</button></td> 
+          <td><button type="button" class="btn btn-primary btn-sm" ng-click="mc.openEdit(med)">Edit</button></td>
+          <td><button type="button" class="btn btn-primary btn-sm"  ng-show="med.editMode" ng-click="mc.saveMedChanges(med)">Save Changes</button></td>
+          <td><button type="button" class="btn btn-danger btn-sm"  ng-click="mc.deleteMed(med._id)">Delete</button></td> 
         </tr>
       </tbody>
   </table>
+  <a href="#meds"><button type="submit" class="btn btn-danger btn-sm" >Add a Medication</button> </a>
 </div>
-  <div>
-      <a href="#meds"><button class="btn btn-sm" type="submit">Add a Medication</button> </a>
-</div>
-
+<hr/>
 <!--  ****************** SURGICAL PROCEDURES ****************** -->
-<h2>Surgical Procedures</h2>
-<div ng-controller="SurgeryController as sc">
-    <div class="col-lg-12">
-        <table class="table table-striped table-hover col-lg-12">
-    
-        <thead>
-          <tr>
-            <th>Surgical Procedure</th>
-            <th>Date</th>
-            <th>Surgeon</th>
-            <th>Hospital</th>
-            <th>Notes</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="surgery in sc.userSurgeries.list">
-              <td><a ng-hide="surgery.editMode">{{surgery.procedure}}</a><input ng-model="surgery.procedure"              ng-show="surgery.editMode"></td>
-              <td><a ng-hide="surgery.editMode">{{surgery.date | date}}</a><input type="date" ng-model="surgery.date" ng-show="surgery.editMode"></td>
-              <td><a ng-hide="surgery.editMode">{{surgery.surgeon}}</a><input ng-model="surgery.surgeon"                  ng-show="surgery.editMode"></td>
-              <td><a ng-hide="surgery.editMode">{{surgery.hospital}}</a><input ng-model="surgery.hospital"                ng-show="surgery.editMode"></td>
-              <td><a ng-hide="surgery.editMode">{{surgery.notes}}</a><input ng-model="surgery.notes"                      ng-show="surgery.editMode"></td>
-              <td><button class="btn btn-primary btn-xs" type="button" ng-click="sc.openEdit(surgery)">Edit</button></td>
-              <td><button class="btn btn-primary btn-xs" type="submit" ng-show="surgery.editMode" ng-click="sc.saveSurgeryChanges(surgery)">Save Changes</button></td>
-              <td><button class="btn btn-danger btn-xs" type="button" ng-click="sc.deleteSurgery(surgery._id)">Delete</button></td> 
-            </tr>
-        </tbody>
+<div class="container-fluid" ng-controller="SurgeryController as sc">
+  <h4>Surgical Procedures</h4>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>Surgical Procedure</th>
+          <th>Date</th>
+          <th>Surgeon</th>
+          <th>Hospital</th>
+          <th>Notes</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="surgery in sc.userSurgeries.list">
+          <td><a ng-hide="surgery.editMode">{{surgery.procedure}}</a><input ng-model="surgery.procedure"              ng-show="surgery.editMode"></td>
+          <td><a ng-hide="surgery.editMode">{{surgery.date | date}}</a><input type="date" ng-model="surgery.date" ng-show="surgery.editMode"></td>
+          <td><a ng-hide="surgery.editMode">{{surgery.surgeon}}</a><input ng-model="surgery.surgeon" ng-show="surgery.editMode"></td>
+          <td><a ng-hide="surgery.editMode">{{surgery.hospital}}</a><input ng-model="surgery.hospital" ng-show="surgery.editMode"></td>
+          <td><a ng-hide="surgery.editMode">{{surgery.notes}}</a><input ng-model="surgery.notes" ng-show="surgery.editMode"></td>
+          <td><button type="button" class="btn btn-primary btn-sm" ng-click="sc.openEdit(surgery)">Edit</button></td>
+          <td><button typr="button" class="btn btn-primary btn-sm" ng-show="surgery.editMode" ng-click="sc.saveSurgeryChanges(surgery)">Save Changes</button></td>
+          <td><button type="button" class="btn btn-danger btn-sm" ng-click="sc.deleteSurgery(surgery._id)">Delete</button></td> 
+        </tr>
+      </tbody>
     </table>
-  <a href="#surgery"><button type="button" class="btn btn-sm">Add a Surgical Procedure</button></a>
+  <a href="#surgery"><button type="button" class="btn btn-danger btn-sm">Add a Surgical Procedure</button></a>
 </div>
-</div>
+<hr/>
+
 
 
 

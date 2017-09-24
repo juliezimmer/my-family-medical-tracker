@@ -1,22 +1,29 @@
 <!-- this is where a new visitor will register as a user -->
-<div class="container-fluid">
-<div id="header" class="col-lg-12">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqRIB5QWcXb7K_Z5WZ3CDUerUBquc05kJDUh_u_ibBh1978TGu">
-    <h1>Welcome to My Family Medical Tracker</h1>
-    <h1>Create an Account</h1>
-</div>
+<div class="jumbotron">
+    <div id="header" class="accountContainer">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="greeting">Welcome to My Family Medical Tracker</h1>
+                <h1 class="greeting">Please Create an Account</h1>
+            </div>
+            <div class="col-md-4">
+                <img class="resize img-responsive img-circle" src="https://www.maxhealthcare.in/sites/default/files/blogs/top_banner/2016/Feb/04/stethoscope_1.jpg" alt="heart">
+            </div>
+        </div>
+    </div>
     <div class="container">
         <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
             <form ng-submit="lc.registerUser()">
     
-<form>            
+<form>     
+    <h3>All fields are required</h3>       
     <div class="form-group">
         <label for="email">Enter your email (this will be your username)</label>
         <input type="email" class="form-control" id="email" ng-model="lc.user.username" />
     </div>
     <div>
         <div class="form-group">
-            <label for="pwd">Choose a Passwword:</label>
+            <label for="pwd">Choose a Password:</label>
             <input type="password" class="form-control" id="pwd" ng-model="lc.user.password" />
         </div>
     </div>
@@ -38,11 +45,12 @@
     </div>
     <br />
     <div>
-        <button class="btn" ng-click="lc.sendMail()">Create Account</button>
-        <a href="#home"><button class="btn">Cancel</button></a>
+        <button class="btn btn-danger" ng-click="lc.sendMail()">Create Account</button>
+        <a href="#home"><button class="btn btn-danger">Cancel</button></a>
     </div>
   </form>
  </div>
 </div>
+
 
 <!-- look up how to include two functions in an ng-click -->

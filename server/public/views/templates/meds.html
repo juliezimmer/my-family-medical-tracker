@@ -1,52 +1,65 @@
 <!-- this is the view the user sees when "Add a Medication" is clicked while in the user.html view -->
-<div>
-    <div id="header" class="col-lg-12">
-     <img src=https://www.walgreens.com/images/adaptive/share/images/retail-mail-service-img.jpg>
-
-    <h2>Add a Medication</h2>
-<div>
-    <form>
-        <div>
-            <label for="medication">Medication</label>
-            <input type="text" ng-model="mc.medObject.medication" /> 
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-7">
+            <h1 class="addMed">Add a Medication Here<h1>
         </div>
-        
-        <div>
-            <label for="dose">Dose</label>
-            <input type="text" ng-model="mc.medObject.dose" />    
+        <div class="col-md-5">
+            <img class="resize img-responsive img-circle" 
+            src="https://www.maxhealthcare.in/sites/default/files/blogs/top_banner/2016/Feb/04/stethoscope_1.jpg" alt="heart">
         </div>
+    </div>
+</div>
 
-        <div>
-            <h4>Frequency</h4>
-                <select ng-model="mc.medObject.frequency">
-                    <option value="qday">qday</option>
-                    <option value="bid">bid</option>
-                    <option value="tid">tid</option>
-                    <option value="qid">qid</option>
-                    <option value="qod">qod</option>
-                    <option value="prn">prn</option>
-                    <option value="other">other</option>
+<div class="container bg-overlay">
+    <form class="medForm">
+        <div class="form-group row">
+            <label for="inputMedication" class="col-md-1 col-form-label">Medication:</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="medication" ng-model="mc.medObject.medication">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="dose" class="col-md-1 col-form-label">Dose:</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="dose" ng-model="mc.medObject.dose"> 
+            </div>
+        </div>
+        <div class="form-group row"> 
+            <label for="frequency" class="col-md-1 col-form-label">Frequency:</label>
+            <div class="col-md-1">
+                <select class="form-control" id="frequency" ng-model="mc.medObject.frequency">
+                    <option>qday</option>
+                    <option>tid</option>
+                    <option>qid</option>
+                    <option>qod</option>
+                    <option>prn</option>
+                    <option>other</option>
                 </select>
+            </div>
         </div>
-
-        <div>
-            <label for="prescriber">Prescriber</label>
-            <input type="text" ng-model="mc.medObject.prescriber" />
+        <div class="form-group row">
+            <label for="prescriber" class="col-md-1 col-form-label">Prescriber:</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="prescriber" ng-model="mc.medObject.prescriber">
+            </div>
         </div>
-
-        <div>
-            <label for="StartDate">Start Date</label>
-            <input type="date" data-date-format="MM/DD/YYYY" ng-model="mc.medObject.startDate"/>
+        <div class="form-group row">
+            <label for="StartDate" class="col-md-1 col-form-label">Start Date:</label>
+            <div class="col-md-2">
+                <input type="date" data-date-format="MM/DD/YYYY" class="form-control" id="startDate" ng-model="mc.medObject.startDate">
+            </div>
         </div>
-        
-        <div>
-            <label for="notes">Notes</label>
-            <input type="notes" ng-model="mc.medObject.notes" />
-        </div>
-        <div>
-            <button class="btn btn-sm" ng-click="mc.MedService.addMed(mc.medObject)">Add Medication</button>
-            <a href="#user"><button class="btn btn-sm">Cancel</button></a>
+        <div class="form-group row">
+            <label for="notes" class="col-md-1 col-form-label">Notes:</label>
+            <div class="col-md-6">
+                <input type="text" id="notes" class="form-control" ng-model="mc.medObject.notes">
+            </div>
         </div>
     </form>
+    <div>
+        <button class="btn btn-danger btn-sm" ng-click="mc.MedService.addMed(mc.medObject)">Add Medication</button>
+        <a href="#user"><button class="btn btn-danger btn-sm">Cancel</button></a>
+    </div>
 </div>
-</div>            
+        

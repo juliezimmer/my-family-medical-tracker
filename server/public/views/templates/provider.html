@@ -1,32 +1,50 @@
 <!-- this is the view the user sees when "Add a Health Care Provider" is clicked while in the user.html view -->
-<div>
-<div id="header" class="col-lg-12"><h2>Add a Health Care Provider</h2>
-
-<div>
-  <form>
-    <div>
-        <label for="name">Name</label>
-        <input type="text" ng-model="pc.providerObject.name" /> 
+<div class="jumbotron">
+        <div class="row">
+            <div class="col-md-7">
+                <h1 class="addMed">Add a Provider Here<h1>
+            </div>
+            <div class="col-md-5">
+                <img class="resize img-responsive img-circle" 
+                src="https://www.maxhealthcare.in/sites/default/files/blogs/top_banner/2016/Feb/04/stethoscope_1.jpg" alt="heart">
+            </div>
+        </div> 
     </div>
     
-    <div>
-        <label for="Specialty">Specialty/Type</label>
-        <input type="text" ng-model="pc.providerObject.specialty" />
-    </div>
+    <div id="provider" class="container bg-overlay">
+        <form class="medForm">
+            <div class="form-group row">
+                <label for="name" class="col-md-1 col-form-label">Name:</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="name" ng-model="pc.providerObject.name">
+                </div>
+            </div>
 
-    <div>
-        <label for="location">Location</label>
-        <input type="text" ng-model="pc.providerObject.location" />    
-    </div>
+            <div class="form-group row">
+                <label for="specialty" class="col-md-1 col-form-label">Specialty:</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="specialty" ng-model="pc.providerObject.specialty"> 
+                </div>
+            </div>
 
-    <div>
-        <label for="phone">Phone</label>
-        <input type="text" ng-model="pc.providerObject.phone"/>
-    </div>
+            <div class="form-group row">
+                <label for="location" class="col-md-1 col-form-label">Location:</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="location" ng-model="pc.providerObject.location">
+                </div>
+            </div>
 
-    <div>
-        <button class="btn btn-sm" ng-click="pc.ProviderService.addProvider(pc.providerObject)">Add Health Care Provider</button>
-        <a href="#user"><button class="btn btn-sm">Cancel</button></a>
+            <div class="form-group row">
+                <label for="phone" class="col-md-1 col-form-label">Phone:</label>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" id="phone" ng-model="pc.providerObject.phone">
+                </div>
+            </div>
+        </form>
+        <div>
+            <button class="btn btn-danger btn-sm" ng-click="pc.ProviderService.addProvider(pc.providerObject)">Add Provider</button>
+            <a href="#user"><button class="btn btn-danger btn-sm">Cancel</button></a>
         </div>
     </div>
-</div>            
+            
+    
