@@ -16,6 +16,8 @@ medicalApp.factory('UserService', function($http, $location){
               // user has a curret session on the server
               userObject.userName = response.data.username; /* this contains the response with the username, which is an email address */
               userObject.firstname = response.data.firstname;//This contains the response with the user's firstname.
+              userObject.allergies = response.data.allergies;
+              //this contains the respons with the user's allergies
               userObject.dateOfBirth = response.data.dateOfBirth; /* this contains the response with the user's date of birth */
               console.log('UserService -- getuser -- User Data: ', userObject.userName);
               console.log("UserService first Name:", userObject.firstname);

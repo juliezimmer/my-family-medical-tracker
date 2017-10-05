@@ -51,7 +51,7 @@ medicalApp.controller('LoginController', function($http, $location, UserService)
     //nodemailer
     vm.sendMail = function() { //need to communicate with the mail.router.js file
       console.log('sendMail has been clicked');
-     //send user's email through this http.post requeste
+     //send user's email through this http.post request 
       $http.post('/mail').then(function(response) {
         console.log('This is the response:', response);
         })

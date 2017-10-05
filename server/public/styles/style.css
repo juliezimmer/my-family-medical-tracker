@@ -48,6 +48,18 @@
   padding-bottom: 20px;
  } 
 
+ #createProfile.bg-overlay {
+  background: linear-gradient(rgba(116, 142, 156, 0.7), rgba(121, 147, 161, 0.7)), 
+  url("http://www.griffinhealth.org/portals/0/SiteImages/hero-Medical-Records.jpg?ver=2015-09-19-220118-637");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
 #provider.bg-overlay {
   background: linear-gradient(rgba(116, 142, 156, 0.7), rgba(121, 147, 161, 0.7)), 
   url("https://archive.cdph.ca.gov/programs/hai/PublishingImages/86807460cropped.jpg");

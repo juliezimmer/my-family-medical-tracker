@@ -1,33 +1,37 @@
 <!-- this is where a new visitor will register as a user -->
 <div class="jumbotron">
-    <div id="header" class="accountContainer">
-        <div class="row">
-            <div class="col-md-8">
-                <h1 class="greeting">Welcome to My Family Medical Tracker</h1>
-                <h1 class="greeting">Please Create an Account</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="greeting">Welcome to My Medi-Tracker<h1 class="greeting">Please Create an Account</h1>
             </div>
             <div class="col-md-4">
                 <img class="resize img-responsive img-circle" src="https://www.maxhealthcare.in/sites/default/files/blogs/top_banner/2016/Feb/04/stethoscope_1.jpg" alt="heart">
             </div>
         </div>
     </div>
-    <div class="container">
+    <div>
         <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
             <form ng-submit="lc.registerUser()">
+    </div>
+
+    <div id="createProfile" class="container bg-overlay"></div>
+        <h3>All fields are required</h3> 
+        <form class="medForm">            
+            <div class="form-group row">
+                <label for="email" class="col-md-4 col-form-label">Enter your email (this will be your username)</label>
+                <div class="col-md-4 offset-md-0">
+                    <input type="email" class="form-control" id="email" ng-model="lc.user.username" />
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label for="pwd" class="col-md-2 col-form-label">Choose a Password:</label>
+                <div class="col-md-3">
+                    <input type="password" class="form-control" id="pwd" ng-model="lc.user.password">
+                </div>
+            </div>
     
-<form>     
-    <h3>All fields are required</h3>       
-    <div class="form-group">
-        <label for="email">Enter your email (this will be your username)</label>
-        <input type="email" class="form-control" id="email" ng-model="lc.user.username" />
-    </div>
-    <div>
-        <div class="form-group">
-            <label for="pwd">Choose a Password:</label>
-            <input type="password" class="form-control" id="pwd" ng-model="lc.user.password" />
-        </div>
-    </div>
-    <div>
+        <div>
         <div class="form-group">
             <label for="FirstName">First Name:</label>
             <input type="text" class="form-control" ng-model="lc.user.firstname" />
@@ -42,6 +46,11 @@
     <div>
         <label for="DOB">Date of Birth:</label>
         <input type="date" data-date-format="MM/DD/YYYY" class="form-control" ng-model="lc.user.dateOfBirth"  />
+    </div>
+    <div class="form-group row">
+        <label for="allergies" class="col-md-1 col-form-label">Allergies - If none, enter NKA</label>
+        <input type="text" class="form-control" id="allergies" ng-model="uc.user.allergies">
+        {{uc}}
     </div>
     <br />
     <div>
