@@ -5,8 +5,11 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+
 var passport = require('./strategies/mongo.localstrategy');
 var sessionConfig = require('./modules/session.config');
+
+var swal = require('sweetalert2');
 
 //DB Module
 var db = require('./modules/db.config.js');
